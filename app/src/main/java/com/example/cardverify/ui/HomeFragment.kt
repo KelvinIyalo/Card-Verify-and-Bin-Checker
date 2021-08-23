@@ -97,8 +97,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 editable?.let {
                     if (it.toString().isNullOrEmpty() || it.length <= 3) {
                         binding.apply {
-                            cardNumberLength.text = null
-                            cardSchema.text = null
+                            nullText()
                             textInputLayout.error = INPUT_ERROR
                         }
 
@@ -130,6 +129,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             country.animate().alpha(0f).duration = 600L
             cardType.animate().alpha(0f).duration = 600L
             bank.animate().alpha(0f).duration = 600L
+
+        }
+    }
+    private fun nullText(){
+        binding.apply {
+            cardNumberLength.text = null
+            cardSchema.text = null
+            country.text = null
+            cardType.text = null
+            bank.text = null
 
         }
     }

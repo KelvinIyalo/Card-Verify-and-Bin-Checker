@@ -6,8 +6,8 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface CardNetwork {
-    @GET("{details}")
+    @GET("{Query}")
     suspend fun getCardDetails(
-    @Path("details")queryString:String
+    @Path("Query")queryString:String
     ):Response<CardCheck>
 }
